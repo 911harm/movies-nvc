@@ -1,0 +1,19 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">911harm</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse justify-content-end navbar-collapse" id="navbarSupportedContent">
+      <img  style="width: 20px;" class="d-block mr-1"  (click)="btnSearch()" src="../../../assets/lupa.svg" alt="search">
+        <input *ngIf=(!btnS) maxlength="10" (input)="onChange($event)" class="form-control mr-sm-2 form-inline my-2 my-lg-0 col-md-2" type="search" placeholder="Game..." aria-label="Busqueda" autofocus>
+      
+     
+    </div>
+  </nav>
+  <div *ngIf=(typeE) class="container">
+    <div class="alert alert-danger" role="alert">
+      Error de Busqueda 
+    </div>
+  </div>
+  <app-items [items]="items" [sm]="sm"></app-items>
