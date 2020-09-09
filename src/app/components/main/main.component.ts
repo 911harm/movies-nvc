@@ -39,18 +39,9 @@ export class MainComponent implements OnInit {
     else{
         this.search.testSerach(event.target.value,this.p).subscribe(
           res=>{
+            // console.log(res.results[0].name,res.results[0].vote_average)
+            // aqui podia sacar el rating, no vi fue los actores tocaria en otra req 
           this.items=res.results
-          // console.log(this.items)
-        // for(let i=0;i<9;i++){
-        //   if(this.items[i].media_type=="tv")
-        //   {
-        //     console.log(this.items[i].name)
-        //   }
-        //   if(this.items[i].media_type=="movie"){
-        //     console.log(this.items[i].title)
-        //   }
-  
-        // }
           },
 
           err=>{console.log(`Error: ${err}`)

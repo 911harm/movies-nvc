@@ -1,0 +1,26 @@
+<div class="container bg-light">
+
+    <a routerLink="/" class="btn btn-outline-secondary">Back</a>
+    <div class="row container">
+        <div class="col-md-5 shadow p-3 mb-5 bg-white rounded">
+            <img class="d-block col-md-10 mx-auto mt-5" src="{{imgPoster}}" alt="pelicula">
+            <h1 class="text-muted text-center">{{titleTV}}</h1>
+        </div>
+        <div class="col md-1"></div>
+        <div class="col-md-6 shadow p-3 mb-5 bg-white rounded">
+            <h5>Temporadas</h5>
+            <div *ngFor="let season of seriesTV; index as i" class="d-inline-block col-md-1">
+
+                <input *ngIf="i==1" checked type="radio" name="season" value={{i}} (change)="SeasonSelec(season)" style="width: 20px;height: 25px;">
+                <input *ngIf="i>1" type="radio" name="season" value={{i}} (change)="SeasonSelec(season)" style="width: 20px;height: 25px;">
+
+            </div>
+            <h4>Temporada {{seasonSelect}}</h4>
+            <ol class="mt-2 pt-2">
+                <li *ngFor="let cap of episodesS; index as i">{{cap.name}}<hr></li>
+                
+            </ol>
+        </div>
+    </div>
+
+</div>

@@ -1,12 +1,16 @@
 <div class="container bg-light mt-5" >
-    <h1 class="text-center display-3 text-red">Peliculas</h1>
+    <!-- <h1 class="text-center display-3 text-red">Peliculas</h1> -->
+    <img class="col-md-7 mx-auto d-block my-3 pt-4" src="../../../assets/logo.svg" alt="the-movie-db">
     <div class="d-flex flex-row-3 justify-content-center col-md-10 mx-auto flex-wrap"infiniteScroll [infiniteScrollDistance]="2"  (scrolled)="onScroll()">
             
             <div *ngFor="let item of items" class="col-md-3 cubo shadow p-3 mx-2 bg-white rounded">
-                <img class="mx-auto" src="{{imageUrl(item)}}" alt="">
-               <h5 class="text-center" *ngIf="item.media_type=='tv'">{{item.name}}</h5>
-               <h5 class="text-center" *ngIf="item.media_type=='movie'">{{item.title}}</h5>
-               <h5 class="text-center" *ngIf="item.media_type=='person'">{{item.name}}</h5>
+                <a class="text-decoration-none text-muted" routerLink="/movie/{{item.id}}">
+                    <img class="mx-auto d-block " src="{{imageUrl(item)}}" alt="">
+                    <h5 class="text-center" *ngIf="item.media_type=='tv'">{{item.name}}</h5>
+                    <h5 class="text-center" *ngIf="item.media_type=='movie'">{{item.title}}</h5>
+                    <h5 class="text-center" *ngIf="item.media_type=='person'">{{item.name}}</h5>
+                
+                </a>
             </div>
             <div *ngIf=(!there)>
                 
@@ -21,14 +25,9 @@
     .cubo{
         background: #fff;
         height: 240px;
-        /* padding: 10px; */
-        /* border: 2px solid black; */
         margin: 2px;  
-        /* box-shadow: 0 0 0 2px black; */
     }
     .cubo img{
-
-        display: block;
         max-width: 180px;
         max-height: 200px;
     }
