@@ -42,7 +42,7 @@ export class MoreComponent implements OnInit {
       err=>{
         this.titleTV='404'
         console.log('Error:No es serie o 404 POC por ahora solo para series')
-        this.imgPoster='../../../assets/404pelicula.jpg'
+        this.imgPoster='https://raw.githubusercontent.com/911harm/movies-nvc/master/src/assets/404pelicula.jpg'
       }
     )
     this.getEpisodes()
@@ -64,7 +64,7 @@ export class MoreComponent implements OnInit {
   imageUrl(item){
     
     if(item == null){
-      return "../../assets/404.jpg";
+      return "https://raw.githubusercontent.com/911harm/movies-nvc/master/src/assets/404.jpg";
     }
 
     return `https://image.tmdb.org/t/p/w500/${item}`

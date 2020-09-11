@@ -1,7 +1,6 @@
 import { Component,HostListener, OnInit,Input,DoCheck } from '@angular/core';
 import {SearchService} from '../../services/search.service'
 
-
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
@@ -48,7 +47,7 @@ export class ItemsComponent implements OnInit,DoCheck {
   imageUrl(item){
     if(item.media_type=="person"){
       if(item.profile_path == null){
-        return "../../assets/404.jpg";
+        return "https://raw.githubusercontent.com/911harm/movies-nvc/master/src/assets/404.jpg";
 
       }
       return `https://image.tmdb.org/t/p/w154${item.profile_path}`
@@ -56,7 +55,7 @@ export class ItemsComponent implements OnInit,DoCheck {
     }
 
     if(item.poster_path == null)
-      return "../../assets/404.jpg";
+      return "https://raw.githubusercontent.com/911harm/movies-nvc/master/src/assets/404.jpg";
     else 
       return `https://image.tmdb.org/t/p/w154${item.poster_path}`
 

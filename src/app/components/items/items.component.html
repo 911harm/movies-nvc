@@ -1,6 +1,6 @@
 <div class="container bg-light mt-5" >
     <!-- <h1 class="text-center display-3 text-red">Peliculas</h1> -->
-    <img class="col-md-7 mx-auto d-block my-3 pt-4" src="../../../assets/logo.svg" alt="the-movie-db">
+    <img class="col-md-7 mx-auto d-block my-3 pt-4" src='https://raw.githubusercontent.com/911harm/movies-nvc/0ff9c621d52c32af2aa0bf295b7e0eabe6858dc8/src/assets/logo.svg' alt="the-movie-db">
     <div class="d-flex flex-row-3 justify-content-center col-md-10 mx-auto flex-wrap"infiniteScroll [infiniteScrollDistance]="2"  (scrolled)="onScroll()">
             
             <div *ngFor="let item of items" class="col-md-3 cubo shadow p-3 mx-2 bg-white rounded">
@@ -17,7 +17,7 @@
                 <div class="alert alert-warning" role="alert">
                     No hay Peliculas/Series 404
                   </div>
-                <img class="d-block col-md-2 col-6 mx-auto" src="../../../assets/lupa.svg" alt="No hay Resultados">
+                <img class="d-block col-md-2 col-6 mx-auto" src='https://raw.githubusercontent.com/911harm/movies-nvc/0ff9c621d52c32af2aa0bf295b7e0eabe6858dc8/src/assets/lupa.svg' alt="No hay Resultados">
             </div>
         </div>
         <button [ngClass]="'no-hidden'" *ngIf="showGoUpButton" class="btn btn-success btn-block my-5" (click)="scrollTop()">Subir</button>
